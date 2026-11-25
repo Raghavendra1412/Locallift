@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LocalLift - Add Business</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Local<span>Lift</span>
+    </div>
+
+    <nav>
+        <a href="business-dashboard.html">Dashboard</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="products.html">Products</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <button
+        class="login-btn"
+        onclick="logout()"
+    >
+        Logout
+    </button>
+
+</header>
+
+
+<main class="add-business-container">
+
+    <div class="add-business-card">
+
+        <p class="small-title">
+            BUSINESS REGISTRATION
+        </p>
+
+        <h1>
+            Register Your Business
+        </h1>
+
+        <p class="form-subtitle">
+            Add your local business to LocalLift.
+        </p>
+
+
+        <form id="businessForm">
+
+            <label for="businessName">
+                Business Name
+            </label>
+
+            <input
+                type="text"
+                id="businessName"
+                placeholder="Enter business name"
+                required
+            >
+
+
+            <label for="businessCategory">
+                Category
+            </label>
+
+            <select
+                id="businessCategory"
+                required
+            >
+
+                <option value="">
+                    Select category
+                </option>
+
+                <option value="grocery">
+                    Grocery
+                </option>
+
+                <option value="food">
+                    Food
+                </option>
+
+                <option value="fashion">
+                    Fashion
+                </option>
+
+                <option value="electronics">
+                    Electronics
+                </option>
+
+                <option value="services">
+                    Services
+                </option>
+
+            </select>
+
+
+            <label for="businessAddress">
+                Address
+            </label>
+
+            <input
+                type="text"
+                id="businessAddress"
+                placeholder="Enter business address"
+                required
+            >
+
+
+            <label for="businessPhone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="businessPhone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label for="businessDescription">
+                Business Description
+            </label>
+
+            <textarea
+                id="businessDescription"
+                placeholder="Describe your business"
+                rows="4"
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="auth-button"
+            >
+                Register Business
+            </button>
+
+        </form>
+
+
+        <button
+            class="back-button"
+            onclick="window.location.href='business-dashboard.html'"
+        >
+            ← Back to Dashboard
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <h2>
+        LocalLift
+    </h2>
+
+    <p>
+        Helping local businesses get discovered and grow.
+    </p>
+
+    <p class="copyright">
+        © 2026 LocalLift
+    </p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+<script>
+
+    const currentUser = getLoggedInUser();
+
+    if (!currentUser) {
+
+        window.location.href = "login.html";
+
+    }
+
+    else if (currentUser.role !== "business") {
+
+        window.location.href = "index.html";
+
+    }
+
+</script>
+
+</body>
+
+</html>

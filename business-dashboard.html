@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LocalLift - Business Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Local<span>Lift</span>
+    </div>
+
+    <nav>
+        <a href="business-dashboard.html">Dashboard</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="products.html">Products</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <button
+        class="login-btn"
+        onclick="logout()"
+    >
+        Logout
+    </button>
+
+</header>
+
+
+<section class="dashboard-header">
+
+    <div>
+
+        <p class="small-title">
+            BUSINESS OWNER
+        </p>
+
+        <h1>
+            Welcome,
+            <span id="businessOwnerName">
+                Business Owner
+            </span>
+        </h1>
+
+        <p>
+            Manage your local business and products from one place.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="dashboard-container">
+
+
+    <!-- Statistics -->
+
+    <section class="dashboard-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏢
+            </div>
+
+            <div>
+
+                <p>
+                    My Business
+                </p>
+
+                <h2 id="businessCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📦
+            </div>
+
+            <div>
+
+                <p>
+                    Products
+                </p>
+
+                <h2 id="productCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👁️
+            </div>
+
+            <div>
+
+                <p>
+                    Views
+                </p>
+
+                <h2>
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quick Actions -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+                    QUICK ACTIONS
+                </p>
+
+                <h2>
+                    Manage Your Business
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-actions">
+
+
+            <!-- Add Business -->
+
+            <button
+                class="dashboard-action"
+                onclick="window.location.href='add-business.html'"
+            >
+
+                <span>
+                    🏢
+                </span>
+
+                <div>
+
+                    <strong>
+                        Add Business
+                    </strong>
+
+                    <p>
+                        Register your business on LocalLift
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- Add Product -->
+
+            <button
+                class="dashboard-action"
+                onclick="window.location.href='add-product.html'"
+            >
+
+                <span>
+                    ➕
+                </span>
+
+                <div>
+
+                    <strong>
+                        Add Product
+                    </strong>
+
+                    <p>
+                        Add a product to your business
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- View Products -->
+
+            <button
+                class="dashboard-action"
+                onclick="window.location.href='products.html'"
+            >
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+
+                    <strong>
+                        View Products
+                    </strong>
+
+                    <p>
+                        Browse products on LocalLift
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- Profile -->
+
+            <button
+                class="dashboard-action"
+                onclick="window.location.href='profile.html'"
+            >
+
+                <span>
+                    👤
+                </span>
+
+                <div>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <p>
+                        View your account information
+                    </p>
+
+                </div>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Business Information -->
+
+    <section class="dashboard-section">
+
+        <div
+            class="dashboard-info-card"
+            id="businessInfoCard"
+        >
+
+            <div>
+
+                <p class="small-title">
+                    YOUR BUSINESS
+                </p>
+
+                <h2 id="businessStatus">
+                    No business registered yet
+                </h2>
+
+                <p id="businessDescription">
+                    Register your business to start listing your products
+                    and reach customers in your local community.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-dashboard-button"
+                id="businessActionButton"
+                onclick="window.location.href='add-business.html'"
+            >
+                Register Business
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <h2>
+        LocalLift
+    </h2>
+
+    <p>
+        Helping local businesses get discovered and grow.
+    </p>
+
+    <p class="copyright">
+        © 2026 LocalLift
+    </p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+    const loggedInUser = getLoggedInUser();
+
+
+    // Protect dashboard
+
+    if (!loggedInUser) {
+
+        window.location.href =
+            "login.html";
+
+    }
+
+    else if (
+        loggedInUser.role !== "business"
+    ) {
+
+        window.location.href =
+            "index.html";
+
+    }
+
+    else {
+
+        // Show business owner's name
+
+        document.getElementById(
+            "businessOwnerName"
+        ).textContent =
+            loggedInUser.name;
+
+
+        // Get saved businesses
+
+        const businesses =
+            JSON.parse(
+                localStorage.getItem(
+                    "localLiftBusinesses"
+                )
+            ) || [];
+
+
+        // Find this owner's business
+
+        const myBusiness =
+            businesses.find(
+                business =>
+                    business.ownerEmail ===
+                    loggedInUser.email
+            );
+
+
+        // If business exists
+
+        if (myBusiness) {
+
+            // Change count
+
+            document.getElementById(
+                "businessCount"
+            ).textContent = "1";
+
+
+            // Change business name
+
+            document.getElementById(
+                "businessStatus"
+            ).textContent =
+                myBusiness.name;
+
+
+            // Change description
+
+            document.getElementById(
+                "businessDescription"
+            ).textContent =
+                myBusiness.description;
+
+
+            // Change button
+
+            document.getElementById(
+                "businessActionButton"
+            ).textContent =
+                "Manage Business";
+
+
+            // Make button go to business page
+            document.getElementById(
+                "businessActionButton"
+            ).onclick = function () {
+
+                alert(
+                    "Business management will be added next."
+                );
+
+            };
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LocalLift - Products</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Local<span>Lift</span>
+        </div>
+
+        <nav>
+            <a href="index.html" id="homeNavLink">Home</a>
+            <a href="businesses.html">Businesses</a>
+            <a href="products.html">Products</a>
+            <a href="#">About</a>
+        </nav>
+
+        <button
+    class="login-btn"
+    id="authButton"
+    onclick="handleAuthButton()"
+>
+    Login
+</button>
+
+    </header>
+
+
+    <!-- Page Header -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                LOCAL MARKETPLACE
+            </p>
+
+            <h1>
+                Discover Products
+            </h1>
+
+            <p>
+                Explore products offered by local businesses in your community.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Search -->
+
+    <section class="product-search">
+
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products..."
+            onkeyup="filterProducts()"
+        >
+
+    </section>
+
+
+    <!-- Categories -->
+
+    <section class="product-categories">
+
+        <button onclick="filterProductsByCategory('all')">
+            All
+        </button>
+
+        <button onclick="filterProductsByCategory('grocery')">
+            🛒 Grocery
+        </button>
+
+        <button onclick="filterProductsByCategory('food')">
+            🍔 Food
+        </button>
+
+        <button onclick="filterProductsByCategory('fashion')">
+            👕 Fashion
+        </button>
+
+        <button onclick="filterProductsByCategory('electronics')">
+            💻 Electronics
+        </button>
+
+        <button onclick="filterProductsByCategory('education')">
+            📚 Education
+        </button>
+
+    </section>
+
+
+    <!-- Products -->
+
+    <main class="product-grid">
+
+
+        <!-- Product 1 -->
+
+        <div class="product-card" data-category="grocery">
+
+            <div class="product-image">
+                🍚
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Grocery
+                </span>
+
+                <h2>
+                    Premium Rice
+                </h2>
+
+                <p class="seller">
+                    Shree Supermarket
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹60 / kg
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 2 -->
+
+        <div class="product-card" data-category="grocery">
+
+            <div class="product-image">
+                🫗
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Grocery
+                </span>
+
+                <h2>
+                    Cooking Oil
+                </h2>
+
+                <p class="seller">
+                    Shree Supermarket
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹140
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 3 -->
+
+        <div class="product-card" data-category="food">
+
+            <div class="product-image">
+                ☕
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Food
+                </span>
+
+                <h2>
+                    Filter Coffee
+                </h2>
+
+                <p class="seller">
+                    Local Brew Cafe
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹40
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 4 -->
+
+        <div class="product-card" data-category="food">
+
+            <div class="product-image">
+                🍔
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Food
+                </span>
+
+                <h2>
+                    Veg Burger
+                </h2>
+
+                <p class="seller">
+                    Local Brew Cafe
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹80
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 5 -->
+
+        <div class="product-card" data-category="fashion">
+
+            <div class="product-image">
+                👕
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Fashion
+                </span>
+
+                <h2>
+                    Cotton T-Shirt
+                </h2>
+
+                <p class="seller">
+                    Style Point
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹499
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 6 -->
+
+        <div class="product-card" data-category="electronics">
+
+            <div class="product-image">
+                🎧
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Electronics
+                </span>
+
+                <h2>
+                    Wireless Earphones
+                </h2>
+
+                <p class="seller">
+                    Tech World
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹899
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 7 -->
+
+        <div class="product-card" data-category="electronics">
+
+            <div class="product-image">
+                🔌
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Electronics
+                </span>
+
+                <h2>
+                    Fast Charger
+                </h2>
+
+                <p class="seller">
+                    Tech World
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹699
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product 8 -->
+
+        <div class="product-card" data-category="education">
+
+            <div class="product-image">
+                📚
+            </div>
+
+            <div class="product-info">
+
+                <span class="business-category">
+                    Education
+                </span>
+
+                <h2>
+                    Engineering Textbook
+                </h2>
+
+                <p class="seller">
+                    Campus Book Store
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹350
+                    </strong>
+
+                    <button>
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h2>
+            LocalLift
+        </h2>
+
+        <p>
+            Helping local businesses get discovered and grow.
+        </p>
+
+        <p class="copyright">
+            © 2026 LocalLift
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
