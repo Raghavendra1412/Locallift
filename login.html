@@ -38,9 +38,7 @@
     <main class="auth-container">
 
 
-        <!-- =========================
-             LOGIN CARD
-        ========================== -->
+        <!-- LOGIN CARD -->
 
         <div class="auth-card" id="loginCard">
 
@@ -57,7 +55,6 @@
 
             <form id="loginForm">
 
-
                 <!-- EMAIL -->
 
                 <label for="email">
@@ -70,7 +67,6 @@
                     placeholder="Enter your email"
                     required
                 >
-
 
 
                 <!-- PASSWORD -->
@@ -87,42 +83,32 @@
                 >
 
 
-
                 <!-- ACCOUNT TYPE -->
 
                 <div class="role-selection">
 
                     <p>Login as:</p>
 
-
                     <label>
-
                         <input
                             type="radio"
                             name="role"
                             value="customer"
                             checked
                         >
-
                         Customer
-
                     </label>
 
-
                     <label>
-
                         <input
                             type="radio"
                             name="role"
                             value="business"
                         >
-
                         Business Owner
-
                     </label>
 
                 </div>
-
 
 
                 <!-- LOGIN BUTTON -->
@@ -135,7 +121,6 @@
                 </button>
 
             </form>
-
 
 
             <!-- REGISTER -->
@@ -157,10 +142,7 @@
 
 
 
-
-        <!-- =========================
-             REGISTER CARD
-        ========================== -->
+        <!-- REGISTER CARD -->
 
         <div
             class="auth-card register-card"
@@ -171,18 +153,14 @@
                 Local<span>Lift</span>
             </div>
 
-
             <h1>Create Account</h1>
-
 
             <p class="auth-subtitle">
                 Join the LocalLift community
             </p>
 
 
-
             <form id="registerForm">
-
 
                 <!-- NAME -->
 
@@ -196,7 +174,6 @@
                     placeholder="Enter your full name"
                     required
                 >
-
 
 
                 <!-- EMAIL -->
@@ -213,7 +190,6 @@
                 >
 
 
-
                 <!-- PASSWORD -->
 
                 <label for="registerPassword">
@@ -227,7 +203,6 @@
                     minlength="6"
                     required
                 >
-
 
 
                 <!-- ACCOUNT TYPE -->
@@ -249,7 +224,6 @@
                 </select>
 
 
-
                 <!-- REGISTER BUTTON -->
 
                 <button
@@ -260,7 +234,6 @@
                 </button>
 
             </form>
-
 
 
             <!-- LOGIN -->
@@ -284,7 +257,11 @@
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- SUPABASE JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- LOCAL LIFT JS -->
 
     <script src="js/app.js"></script>
 

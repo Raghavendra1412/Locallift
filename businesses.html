@@ -2,17 +2,24 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>LocalLift - Businesses</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <header class="navbar">
 
@@ -20,25 +27,43 @@
             Local<span>Lift</span>
         </div>
 
+
         <nav>
-            <a href="index.html" id="homeNavLink">Home</a>
-            <a href="businesses.html">Businesses</a>
-            <a href="products.html">Products</a>
-            <a href="#">About</a>
+
+            <a href="index.html" id="homeNavLink">
+                Home
+            </a>
+
+            <a href="businesses.html">
+                Businesses
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
         </nav>
 
+
         <button
-    class="login-btn"
-    id="authButton"
-    onclick="handleAuthButton()"
->
-    Login
-</button>
+            class="login-btn"
+            id="authButton"
+            onclick="handleAuthButton()"
+        >
+            Login
+        </button>
 
     </header>
 
 
-    <!-- Page Header -->
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
 
     <section class="page-header">
 
@@ -61,7 +86,10 @@
     </section>
 
 
-    <!-- Search -->
+
+    <!-- =========================
+         SEARCH
+    ========================== -->
 
     <section class="business-search">
 
@@ -75,7 +103,10 @@
     </section>
 
 
-    <!-- Categories -->
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
 
     <section class="business-categories">
 
@@ -106,17 +137,25 @@
     </section>
 
 
-    <!-- Business Listings -->
+
+    <!-- =========================
+         BUSINESS LISTINGS
+    ========================== -->
 
     <main class="business-list">
 
-        <!-- Business 1 -->
 
-        <div class="listing-card" data-category="grocery">
+        <!-- BUSINESS 1 -->
+
+        <div
+            class="listing-card"
+            data-category="grocery"
+        >
 
             <div class="listing-image">
                 🛒
             </div>
+
 
             <div class="listing-content">
 
@@ -136,6 +175,7 @@
                     Everyday groceries and household products.
                 </p>
 
+
                 <div class="listing-bottom">
 
                     <span class="rating">
@@ -153,13 +193,18 @@
         </div>
 
 
-        <!-- Business 2 -->
 
-        <div class="listing-card" data-category="food">
+        <!-- BUSINESS 2 -->
+
+        <div
+            class="listing-card"
+            data-category="food"
+        >
 
             <div class="listing-image">
                 ☕
             </div>
+
 
             <div class="listing-content">
 
@@ -179,6 +224,7 @@
                     Fresh coffee, snacks and quick meals.
                 </p>
 
+
                 <div class="listing-bottom">
 
                     <span class="rating">
@@ -196,13 +242,18 @@
         </div>
 
 
-        <!-- Business 3 -->
 
-        <div class="listing-card" data-category="fashion">
+        <!-- BUSINESS 3 -->
+
+        <div
+            class="listing-card"
+            data-category="fashion"
+        >
 
             <div class="listing-image">
                 👕
             </div>
+
 
             <div class="listing-content">
 
@@ -222,6 +273,7 @@
                     Clothing and fashion accessories.
                 </p>
 
+
                 <div class="listing-bottom">
 
                     <span class="rating">
@@ -239,13 +291,18 @@
         </div>
 
 
-        <!-- Business 4 -->
 
-        <div class="listing-card" data-category="electronics">
+        <!-- BUSINESS 4 -->
+
+        <div
+            class="listing-card"
+            data-category="electronics"
+        >
 
             <div class="listing-image">
                 💻
             </div>
+
 
             <div class="listing-content">
 
@@ -265,6 +322,7 @@
                     Mobile accessories and electronic products.
                 </p>
 
+
                 <div class="listing-bottom">
 
                     <span class="rating">
@@ -282,13 +340,18 @@
         </div>
 
 
-        <!-- Business 5 -->
 
-        <div class="listing-card" data-category="services">
+        <!-- BUSINESS 5 -->
+
+        <div
+            class="listing-card"
+            data-category="services"
+        >
 
             <div class="listing-image">
                 💇
             </div>
+
 
             <div class="listing-content">
 
@@ -308,6 +371,7 @@
                     Hair styling and personal care services.
                 </p>
 
+
                 <div class="listing-bottom">
 
                     <span class="rating">
@@ -324,10 +388,14 @@
 
         </div>
 
+
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -346,7 +414,15 @@
     </footer>
 
 
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script src="js/app.js"></script>
+
 
 </body>
 

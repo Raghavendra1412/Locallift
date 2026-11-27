@@ -12,6 +12,10 @@
 
 <body>
 
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header class="navbar">
 
         <div class="logo">
@@ -26,23 +30,31 @@
         </nav>
 
         <button
-    class="login-btn"
-    id="authButton"
-    onclick="handleAuthButton()"
->
-    Login
-</button>
+            class="login-btn"
+            id="authButton"
+            onclick="handleAuthButton()"
+        >
+            Login
+        </button>
 
     </header>
 
 
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main>
+
+        <!-- HERO SECTION -->
 
         <section class="hero">
 
             <div class="hero-content">
 
-                <p class="tagline">SUPPORT LOCAL • GROW LOCAL</p>
+                <p class="tagline">
+                    SUPPORT LOCAL • GROW LOCAL
+                </p>
 
                 <h1>
                     Discover the best
@@ -72,6 +84,10 @@
 
         </section>
 
+
+        <!-- =========================
+             CATEGORIES
+        ========================== -->
 
         <section class="categories">
 
@@ -114,21 +130,36 @@
         </section>
 
 
+        <!-- =========================
+             POPULAR BUSINESSES
+        ========================== -->
+
         <section class="business-section">
 
             <div class="section-heading">
 
                 <div>
-                    <p class="small-title">DISCOVER</p>
-                    <h2>Popular Local Businesses</h2>
+
+                    <p class="small-title">
+                        DISCOVER
+                    </p>
+
+                    <h2>
+                        Popular Local Businesses
+                    </h2>
+
                 </div>
 
-                <a href="#">View All →</a>
+                <a href="businesses.html">
+                    View All →
+                </a>
 
             </div>
 
 
             <div class="business-container">
+
+                <!-- BUSINESS 1 -->
 
                 <div class="business-card">
 
@@ -142,9 +173,13 @@
                             Grocery
                         </span>
 
-                        <h3>Shree Supermarket</h3>
+                        <h3>
+                            Shree Supermarket
+                        </h3>
 
-                        <p>📍 Main Road</p>
+                        <p>
+                            📍 Main Road
+                        </p>
 
                         <p class="rating">
                             ⭐ 4.5
@@ -154,6 +189,8 @@
 
                 </div>
 
+
+                <!-- BUSINESS 2 -->
 
                 <div class="business-card">
 
@@ -167,9 +204,13 @@
                             Food
                         </span>
 
-                        <h3>Local Brew Cafe</h3>
+                        <h3>
+                            Local Brew Cafe
+                        </h3>
 
-                        <p>📍 College Road</p>
+                        <p>
+                            📍 College Road
+                        </p>
 
                         <p class="rating">
                             ⭐ 4.7
@@ -179,6 +220,8 @@
 
                 </div>
 
+
+                <!-- BUSINESS 3 -->
 
                 <div class="business-card">
 
@@ -192,9 +235,13 @@
                             Fashion
                         </span>
 
-                        <h3>Style Point</h3>
+                        <h3>
+                            Style Point
+                        </h3>
 
-                        <p>📍 Market Street</p>
+                        <p>
+                            📍 Market Street
+                        </p>
 
                         <p class="rating">
                             ⭐ 4.3
@@ -211,9 +258,15 @@
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
-        <h2>LocalLift</h2>
+        <h2>
+            LocalLift
+        </h2>
 
         <p>
             Helping local businesses get discovered and grow.
@@ -225,6 +278,12 @@
 
     </footer>
 
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script src="js/app.js"></script>
 

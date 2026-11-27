@@ -167,81 +167,14 @@
 
 
 
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- LOCAL LIFТ JAVASCRIPT -->
+
 <script src="js/app.js"></script>
 
-
-<script>
-
-    /* Load logged-in user */
-
-    const loggedInUser =
-        getLoggedInUser();
-
-
-    /* If nobody is logged in */
-
-    if (!loggedInUser) {
-
-        window.location.href =
-            "login.html";
-
-    }
-
-
-    else {
-
-        /* Name */
-
-        document.getElementById(
-            "profileName"
-        ).textContent =
-            loggedInUser.name;
-
-
-        document.getElementById(
-            "profileFullName"
-        ).textContent =
-            loggedInUser.name;
-
-
-        /* Email */
-
-        document.getElementById(
-            "profileEmail"
-        ).textContent =
-            loggedInUser.email;
-
-
-        /* Account type */
-
-        let accountType =
-            "Customer";
-
-
-        if (
-            loggedInUser.role === "business"
-        ) {
-
-            accountType =
-                "Business Owner";
-
-        }
-
-
-        document.getElementById(
-            "profileRole"
-        ).textContent =
-            accountType;
-
-
-        document.getElementById(
-            "profileAccountType"
-        ).textContent =
-            accountType;
-
-    }
-
-</script>
 
 </body>
 

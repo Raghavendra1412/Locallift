@@ -181,25 +181,25 @@
             </button>
 
 
-            <!-- Add Product -->
+            <!-- My Catalogue -->
 
             <button
                 class="dashboard-action"
-                onclick="window.location.href='add-product.html'"
+                onclick="window.location.href='catalogue.html'"
             >
 
                 <span>
-                    ➕
+                    📋
                 </span>
 
                 <div>
 
                     <strong>
-                        Add Product
+                        My Catalogue
                     </strong>
 
                     <p>
-                        Add a product to your business
+                        Add and edit products in your catalogue
                     </p>
 
                 </div>
@@ -324,113 +324,13 @@
 </footer>
 
 
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- LOCAL LIFТ JAVASCRIPT -->
+
 <script src="js/app.js"></script>
-
-
-<script>
-
-    const loggedInUser = getLoggedInUser();
-
-
-    // Protect dashboard
-
-    if (!loggedInUser) {
-
-        window.location.href =
-            "login.html";
-
-    }
-
-    else if (
-        loggedInUser.role !== "business"
-    ) {
-
-        window.location.href =
-            "index.html";
-
-    }
-
-    else {
-
-        // Show business owner's name
-
-        document.getElementById(
-            "businessOwnerName"
-        ).textContent =
-            loggedInUser.name;
-
-
-        // Get saved businesses
-
-        const businesses =
-            JSON.parse(
-                localStorage.getItem(
-                    "localLiftBusinesses"
-                )
-            ) || [];
-
-
-        // Find this owner's business
-
-        const myBusiness =
-            businesses.find(
-                business =>
-                    business.ownerEmail ===
-                    loggedInUser.email
-            );
-
-
-        // If business exists
-
-        if (myBusiness) {
-
-            // Change count
-
-            document.getElementById(
-                "businessCount"
-            ).textContent = "1";
-
-
-            // Change business name
-
-            document.getElementById(
-                "businessStatus"
-            ).textContent =
-                myBusiness.name;
-
-
-            // Change description
-
-            document.getElementById(
-                "businessDescription"
-            ).textContent =
-                myBusiness.description;
-
-
-            // Change button
-
-            document.getElementById(
-                "businessActionButton"
-            ).textContent =
-                "Manage Business";
-
-
-            // Make button go to business page
-            document.getElementById(
-                "businessActionButton"
-            ).onclick = function () {
-
-                alert(
-                    "Business management will be added next."
-                );
-
-            };
-
-        }
-
-    }
-
-</script>
 
 </body>
 
