@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +52,8 @@
         </h1>
 
         <p>
-            Manage your local business and products from one place.
+            Manage your local business, products and customer feedback
+            from one place.
         </p>
 
     </div>
@@ -207,6 +209,32 @@
             </button>
 
 
+            <!-- Analytics -->
+
+            <button
+                class="dashboard-action"
+                onclick="window.location.href='analytics.html'"
+            >
+
+                <span>
+                    📊
+                </span>
+
+                <div>
+
+                    <strong>
+                        Product Analytics
+                    </strong>
+
+                    <p>
+                        View customer ratings and product feedback
+                    </p>
+
+                </div>
+
+            </button>
+
+
             <!-- View Products -->
 
             <button
@@ -258,6 +286,165 @@
 
             </button>
 
+
+        </div>
+
+    </section>
+
+
+    <!-- Product Analytics Preview -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+                    CUSTOMER FEEDBACK
+                </p>
+
+                <h2>
+                    Product Analytics
+                </h2>
+
+                <p>
+                    Understand how customers feel about your products.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stats">
+
+
+            <!-- Average Rating -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⭐
+                </div>
+
+                <div>
+
+                    <p>
+                        Average Rating
+                    </p>
+
+                    <h2>
+                        4.6
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reviews -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💬
+                </div>
+
+                <div>
+
+                    <p>
+                        Customer Reviews
+                    </p>
+
+                    <h2>
+                        128
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Highest Rated -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <p>
+                        Top Product
+                    </p>
+
+                    <h2 style="font-size: 20px;">
+                        Mysore Pak
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Rating Overview -->
+
+        <div class="dashboard-info-card">
+
+            <div style="width: 100%;">
+
+                <p class="small-title">
+                    RATING OVERVIEW
+                </p>
+
+                <h3>
+                    Customer Ratings
+                </h3>
+
+
+                <div style="margin-top: 20px;">
+
+                    <p>
+                        ⭐⭐⭐⭐⭐
+                        <strong>82%</strong>
+                    </p>
+
+                    <p>
+                        ⭐⭐⭐⭐
+                        <strong>12%</strong>
+                    </p>
+
+                    <p>
+                        ⭐⭐⭐
+                        <strong>4%</strong>
+                    </p>
+
+                    <p>
+                        ⭐⭐
+                        <strong>1%</strong>
+                    </p>
+
+                    <p>
+                        ⭐
+                        <strong>1%</strong>
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-dashboard-button"
+                    onclick="window.location.href='analytics.html'"
+                    style="margin-top: 20px;"
+                >
+                    View Full Analytics
+                </button>
+
+            </div>
 
         </div>
 
@@ -328,7 +515,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- LOCAL LIFТ JAVASCRIPT -->
+<!-- LOCAL LIFT JAVASCRIPT -->
 
 <script src="js/app.js"></script>
 

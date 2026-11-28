@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalLift - Discover Local Businesses</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+
+<header class="navbar glass-nav">
+  <a class="brand" href="index.html" aria-label="LocalLift Home">
+    <span class="brand-mark">⌂</span>
+    <span>Local<span>Lift</span></span>
+  </a>
+
+  <nav class="main-nav">
+    <a class="active" href="index.html">Home</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="products.html">Products</a>
+    <a href="businesses.html">Services</a>
+    <a href="#offers">🔥 Offers</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="location-pill" type="button">📍 Dharwad <span>⌄</span></button>
+    <button class="icon-btn" type="button" aria-label="Search">⌕</button>
+    <button class="icon-btn notification" type="button" aria-label="Notifications">♧<i></i></button>
+    <button class="profile-chip" id="authButton" onclick="handleAuthButton()">Login</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero-section">
+    <div class="hero-copy">
+      <span class="eyebrow">✨ Your Local Marketplace</span>
+      <h1>Discover, Shop &amp; Support<br><span>Local Businesses</span></h1>
+      <p>Find nearby shops, products and services from trusted local businesses in your area.</p>
+
+      <form class="hero-search" onsubmit="event.preventDefault(); searchBusinesses();">
+        <span class="search-icon">⌕</span>
+        <input id="homeSearch" type="text" placeholder="Search for businesses, products or services..." autocomplete="off">
+        <button type="button" class="location-inline">📍 Dharwad⌄</button>
+        <button type="submit" class="search-submit">Search →</button>
+      </form>
+
+      <div class="quick-pills">
+        <a href="businesses.html">🛒 Grocery</a>
+        <a href="businesses.html">🍴 Food &amp; Restaurants</a>
+        <a href="businesses.html">🛠 Services</a>
+        <a href="businesses.html">👕 Fashion</a>
+        <a href="businesses.html">💻 Electronics</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="store-scene">
+        <div class="store-pin">⌖</div>
+        <div class="store-roof"></div>
+        <div class="store-body">
+          <div class="store-sign">LOCAL<br>BUSINESS</div>
+          <div class="store-window"><span>OPEN</span></div>
+          <div class="store-door"></div>
+          <div class="store-bag bag-one">🛍️</div>
+          <div class="store-bag bag-two">🛒</div>
+        </div>
+        <div class="store-plant plant-one">🌿</div>
+        <div class="store-plant plant-two">🌿</div>
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+      </div>
+      <div class="hero-float float-left">💖 <strong>Shop Local</strong><small>Support your neighborhood</small></div>
+      <div class="hero-float float-right">⚡ <strong>Live Offers</strong><small>New deals nearby</small></div>
+    </div>
+  </section>
+
+  <section class="live-strip">
+    <div><span class="stat-icon">👥</span><strong class="counter" data-target="120">0</strong><span>+<small>Local Businesses</small></span></div>
+    <div><span class="stat-icon">🛍️</span><strong class="counter" data-target="1540">0</strong><span>+<small>Products</small></span></div>
+    <div><span class="stat-icon">⚙️</span><strong class="counter" data-target="320">0</strong><span>+<small>Services</small></span></div>
+    <div><span class="stat-icon">⚡</span><strong>Ongoing Offers</strong><span><small class="offer-badge">Up to 50% Off</small></span></div>
+    <div class="live-activity"><span class="live-dot"></span><strong>Live Activity</strong><small>5 people exploring businesses now</small><span class="pulse-line">〰⌁〰</span></div>
+  </section>
+
+  <section class="wave-section">
+    <div class="section-heading">
+      <div><span class="section-icon">▦</span><h2>Explore Categories</h2></div>
+      <a href="businesses.html">View All →</a>
+    </div>
+    <div class="category-grid">
+      <a class="category-card grocery" href="businesses.html"><span>🛒</span><strong>Grocery</strong></a>
+      <a class="category-card food" href="businesses.html"><span>🍴</span><strong>Food</strong></a>
+      <a class="category-card fashion" href="businesses.html"><span>👕</span><strong>Fashion</strong></a>
+      <a class="category-card electronics" href="businesses.html"><span>💻</span><strong>Electronics</strong></a>
+      <a class="category-card services" href="businesses.html"><span>🛠</span><strong>Services</strong></a>
+      <a class="category-card education" href="businesses.html"><span>🎓</span><strong>Education</strong></a>
+      <a class="category-card health" href="businesses.html"><span>❤</span><strong>Health &amp; Wellness</strong></a>
+      <a class="category-card home" href="businesses.html"><span>⌂</span><strong>Home &amp; Living</strong></a>
+      <a class="category-card more" href="businesses.html"><span>•••</span><strong>More</strong></a>
+    </div>
+  </section>
+
+  <section class="feature-section" id="offers">
+    <div class="section-heading">
+      <div><span class="section-icon gold">☆</span><h2>Featured Businesses Near You</h2></div>
+      <a href="businesses.html">View All →</a>
+    </div>
+    <div class="feature-layout">
+      <div class="business-carousel" id="businessList">
+        <article class="business-card featured-card"><div class="business-image grocery-image">🛒</div><div class="business-card-content"><span class="featured-tag">Featured</span><h3>Siddhu Grocery Mart</h3><p>⭐ 4.8 (126) &nbsp; 📍 0.9 km</p><span class="mini-tag">Grocery</span></div></article>
+        <article class="business-card featured-card"><div class="business-image food-image">🍴</div><div class="business-card-content"><span class="featured-tag">Popular</span><h3>Udupi Veg Restaurant</h3><p>⭐ 4.6 (98) &nbsp; 📍 1.2 km</p><span class="mini-tag">Food</span></div></article>
+        <article class="business-card featured-card"><div class="business-image tech-image">💻</div><div class="business-card-content"><span class="featured-tag">Top Rated</span><h3>TechPoint Electronics</h3><p>⭐ 4.7 (64) &nbsp; 📍 1.5 km</p><span class="mini-tag">Electronics</span></div></article>
+        <article class="business-card featured-card"><div class="business-image fashion-image">👕</div><div class="business-card-content"><span class="featured-tag">Trending</span><h3>StyleHub Fashion</h3><p>⭐ 4.5 (47) &nbsp; 📍 2.0 km</p><span class="mini-tag">Fashion</span></div></article>
+      </div>
+
+      <div class="how-card">
+        <span class="how-icon">▱</span>
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div><span>⌖</span><b>1. Find</b><small>Local Businesses</small></div>
+          <i>→</i>
+          <div><span>🛍</span><b>2. Explore</b><small>Products &amp; Services</small></div>
+          <i>→</i>
+          <div><span>🛒</span><b>3. Shop</b><small>or Book</small></div>
+          <i>→</i>
+          <div><span>✓</span><b>4. Support</b><small>Your Local Area</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section" id="about">
+    <div class="why-copy"><span class="eyebrow">💚 Why LocalLift?</span><h2>Everything local, <span>in one place.</span></h2><p>Discover nearby businesses, compare products and services, find better deals, and help your local community grow.</p><div class="why-list"><div>✓ Support local businesses</div><div>✓ Discover hidden gems</div><div>✓ Better prices &amp; real deals</div><div>✓ Build a stronger local community</div></div></div>
+    <div class="community-visual"><div class="community-ring"></div><div class="community-store">🏪</div><div class="community-bubble b1">🛍️</div><div class="community-bubble b2">❤</div><div class="community-bubble b3">📍</div></div>
+  </section>
+</main>
+
+<footer class="modern-footer">
+  <div><div class="brand footer-brand"><span class="brand-mark">⌂</span><span>Local<span>Lift</span></span></div><p>Think Local · Shop Local · Grow Local</p></div>
+  <div class="footer-links"><span>Trusted Businesses</span><span>Local Deals &amp; Offers</span><span>Business Growth</span><span>Stronger Community</span></div>
+  <a class="get-started" href="login.html">Get Started →</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/app.js"></script>
+<script>
+(function () {
+  const counters = document.querySelectorAll('.counter');
+  const animate = (el) => {
+    const target = Number(el.dataset.target || 0);
+    const duration = 1200;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(target * eased).toLocaleString();
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { animate(entry.target); obs.unobserve(entry.target); } });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+
+  const carousel = document.querySelector('.business-carousel');
+  if (carousel) {
+    let timer = setInterval(() => {
+      const max = carousel.scrollWidth - carousel.clientWidth;
+      if (max <= 0) return;
+      carousel.scrollTo({ left: carousel.scrollLeft >= max - 20 ? 0 : carousel.scrollLeft + 330, behavior: 'smooth' });
+    }, 3200);
+    carousel.addEventListener('mouseenter', () => clearInterval(timer));
+    carousel.addEventListener('mouseleave', () => {
+      timer = setInterval(() => {
+        const max = carousel.scrollWidth - carousel.clientWidth;
+        if (max <= 0) return;
+        carousel.scrollTo({ left: carousel.scrollLeft >= max - 20 ? 0 : carousel.scrollLeft + 330, behavior: 'smooth' });
+      }, 3200);
+    });
+  }
+})();
+</script>
+</body>
+</html>
